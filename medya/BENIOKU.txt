@@ -1,0 +1,2 @@
+Instagram'dan aktarılan fotoğraflar ve Reels kapak görselleri bu klasöre gelir.
+(araclar/instagram-aktar.js otomatik doldurur.)

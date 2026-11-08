@@ -1,5 +1,7 @@
-/* Tasarım önizlemeleri için temsili "eski fotoğraf" çizimleri.
-   Gerçek sitede bunların yerine Instagram'daki fotoğraf ve videolarınız gelecek. */
+/* ÖRNEK GÖRSELLER
+   Instagram'daki gerçek fotoğraflar eklenene kadar kullanılan temsili çizimler.
+   İçerikte bir görselin "sahne" alanı varsa (ör. { sahne: "vapur" }) bu çizim gösterilir.
+   Gerçek fotoğraflar eklendiğinde bu dosyaya ihtiyaç kalmaz. */
 (function () {
   var K = "#3b2c20", K2 = "#5a4532", KR = "#efe2c4", KIR = "#8e3a27";
   var S = {};
@@ -157,7 +159,7 @@
 
   window.SAHNELER = S;
 
-  /* Canlı renk paleti: <html data-renk="canli"> olan sayfalarda sepya yerine kullanılır */
+  /* Canlı renk paleti (varsayılan). <html data-renk="sepya"> verilirse eski sepya tonlar kullanılır. */
   var CANLI = {
     "#e6d3ab":"#8fd0e8","#e8d7b2":"#8fd0e8","#ead9b5":"#9ad7ec","#e7d5ae":"#8fd0e8",
     "#f3e6c8":"#ffd166","#bea57b":"#6fb07f","#8f7552":"#4f6d9a","#9a7f5a":"#7a8ca8",
@@ -174,7 +176,7 @@
     "#d6bf94":"#2a9d8f","#efe5cf":"#ffffff","#d8c8a6":"#e0e0e0","#e1d3b4":"#ececec",
     "#2e2219":"#1d1d1d","#a38a60":"#52b788","#9c8259":"#40916c"
   };
-  function canliMi() { return document.documentElement.getAttribute("data-renk") === "canli"; }
+  function canliMi() { return document.documentElement.getAttribute("data-renk") !== "sepya"; }
 
   window.sahneSvg = function (ad) {
     var ic = S[ad] || S.mahalle;
@@ -182,9 +184,4 @@
     return '<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">' + ic + "</svg>";
   };
 
-  document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll("[data-sahne]").forEach(function (el) {
-      el.insertAdjacentHTML("afterbegin", window.sahneSvg(el.getAttribute("data-sahne")));
-    });
-  });
 })();
