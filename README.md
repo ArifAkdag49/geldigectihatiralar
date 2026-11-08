@@ -3,10 +3,12 @@
 Instagram’daki **@geldigecti_hatiralar** hesabının fotoğraflarını ve hatıra yazılarını yayınlayan site.
 Her hatıranın yanında **“Instagram’da gör / izle”** bağlantısı vardır; ziyaretçi tıklayınca Instagram’a geçer.
 
-- **Akış:** Ana sayfa. Karşılama, kategoriler ve sonsuz kaydırmalı hatıra akışı.
-- **Keşfet:** Bütün fotoğraflar tek duvarda; kategori ve arama ile süzme.
+- **Ana sayfa:** En üstte tam genişlik tanıtım videosu, altında resimli kategori kutuları,
+  ardından her kategorinin hatıraları kendi bölümünde, Reels şeridi ve Instagram bölümü.
+- **Kategori sayfası:** Bir kategorinin bütün hatıraları (en yeni / en eski sıralama).
+- **Bütün hatıralar:** Arama ve kategori süzme.
 - **Reels:** Reels kapakları ve yazıları. Videolar Instagram’da izlenir.
-- **Hatıra sayfası:** Kaydırmalı fotoğraflar, yazının tamamı, etiketler, paylaş / kaydet, benzer hatıralar.
+- **Hatıra sayfası:** Kaydırmalı fotoğraflar, yazının tamamı, etiketler, paylaş, benzer hatıralar.
 - **Koyu / açık tema**, telefona tam uyum, yazı tipleri sitede barındırılır (Google’a bağlanmaz).
 
 Kurulum gerekmez: düz HTML + CSS + JavaScript. Her web hostinginde (IONOS dahil) çalışır.
@@ -18,7 +20,7 @@ Kurulum gerekmez: düz HTML + CSS + JavaScript. Her web hostinginde (IONOS dahil
 | Dosya / klasör | Ne işe yarar |
 |---|---|
 | `index.html` | Sitenin ana sayfası |
-| `veri/ayarlar.js` | **Ayarlar:** Instagram adı, e-posta, Hakkımızda yazısı, kategoriler |
+| `veri/ayarlar.js` | **Ayarlar:** Instagram adı, e-posta, tanıtım videosu, duyuru şeridi, Hakkımızda yazısı, kategoriler |
 | `veri/icerik.js` | **Hatıralar:** bütün yazılar ve fotoğraf yolları |
 | `medya/` | Instagram’dan aktarılan fotoğraflar |
 | `css/`, `js/`, `fontlar/`, `gorseller/` | Tasarım ve çalışma dosyaları |
@@ -26,6 +28,8 @@ Kurulum gerekmez: düz HTML + CSS + JavaScript. Her web hostinginde (IONOS dahil
 | `.htaccess`, `404.html`, `robots.txt` | IONOS sunucu ayarları |
 
 > Şu an `veri/icerik.js` içindeki hatıralar **örnektir**; görseller temsili çizimlerdir.
+> Ana sayfadaki `medya/tanitim.mp4` videosu da örnektir. Kendi Reels videolarınızdan birini koymak için
+> dosyayı `medya/` klasörüne kopyalayıp `veri/ayarlar.js` içindeki `tanitimVideosu` satırını değiştirin.
 
 ## Bilgisayarda açıp bakmak
 

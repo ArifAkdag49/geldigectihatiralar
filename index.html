@@ -4,58 +4,58 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Geldi Geçti Hatıralar — Unutulmaya yüz tutmuş günlerin izinde</title>
-<meta name="description" content="Eski İstanbul, mahalle hayatı, bakkal defterleri, kasetler ve tek kanallı televizyon akşamları… Geldi Geçti Hatıralar’ın Instagram’da paylaştığı bütün fotoğraflar ve hatıra yazıları tek bir yerde.">
-<meta name="theme-color" content="#fbf7f1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#131211" media="(prefers-color-scheme: dark)">
+<meta name="description" content="Eski İstanbul, mahalle hayatı, bakkal defterleri, kasetler ve tek kanallı televizyon akşamları… Geldi Geçti Hatıralar’ın Instagram’da paylaştığı fotoğraflar ve hatıra yazıları, kategori kategori.">
+<meta name="theme-color" content="#1f3d33">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Geldi Geçti Hatıralar">
 <meta property="og:title" content="Geldi Geçti Hatıralar">
 <meta property="og:description" content="Unutulmaya yüz tutmuş günlerin izinde: fotoğraflar, hatıralar ve hikâyeler.">
+<meta property="og:image" content="medya/tanitim-kapak.jpg">
 <meta property="og:locale" content="tr_TR">
 <link rel="icon" href="gorseller/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fontlar/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fontlar/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
 <script>
-  /* Sayfa çizilmeden önce kayıtlı temayı uygula (beyaz yanıp sönmeyi önler) */
   try { var t = localStorage.getItem("ggh-tema"); if (t) document.documentElement.setAttribute("data-tema", t); } catch (e) {}
 </script>
 </head>
 <body>
 <a class="atla" href="#icerik">İçeriğe geç</a>
 
+<div class="duyuru" id="duyuru">
+  <div class="duyuru-ic">
+    <span data-duyuru>Her gün yeni bir hatıra · Instagram’da @geldigecti_hatiralar</span>
+    <a data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener">Takip et →</a>
+  </div>
+</div>
+
 <header class="ust" id="ust">
   <div class="ust-ic">
-    <a class="logo" href="#/" aria-label="Geldi Geçti Hatıralar — Ana sayfa">
-      <img class="logo-isaret" src="gorseller/favicon.svg" alt="" width="40" height="40">
-      <span class="logo-yazi">Geldi Geçti <em>Hatıralar</em></span>
-    </a>
-
-    <nav class="ana-menu" id="ana-menu" aria-label="Ana menü">
-      <a href="#/" data-rota="akis">Akış</a>
-      <a href="#/kesfet" data-rota="kesfet">Keşfet</a>
-      <a href="#/reels" data-rota="reels">Reels</a>
-      <a href="#/kaydedilenler" data-rota="kaydedilenler">Kaydettiklerim</a>
-      <a href="#/hakkimizda" data-rota="hakkimizda">Hakkımızda</a>
-    </nav>
-
-    <div class="ust-arac">
+    <div class="ust-sol">
       <button class="ikon-btn" id="ara-btn" type="button" aria-label="Hatıralarda ara" aria-expanded="false" aria-controls="arama-paneli">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
       </button>
+    </div>
+
+    <a class="logo" href="#/" aria-label="Geldi Geçti Hatıralar — Ana sayfa">
+      <img class="logo-isaret" src="gorseller/favicon.svg" alt="" width="44" height="44">
+      <span class="logo-yazi"><b>Geldi Geçti</b><em>Hatıralar</em></span>
+    </a>
+
+    <div class="ust-sag">
       <button class="ikon-btn" id="tema-btn" type="button" aria-label="Koyu / açık tema">
         <svg class="ay" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
         <svg class="gunes" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
-      <a class="btn btn-marka btn-kucuk ig-takip" data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener">
+      <a class="btn btn-ig btn-kucuk ig-takip" data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" class="dolu"/></svg>
-        <span>Takip Et</span>
+        <span>Instagram</span>
       </a>
-      <button class="ikon-btn menu-btn" id="menu-btn" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="ana-menu">
-        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
     </div>
   </div>
+
+  <nav class="kategori-menu" id="kategori-menu" aria-label="Kategoriler"></nav>
 
   <div class="arama-paneli" id="arama-paneli" hidden>
     <div class="arama-ic">
@@ -74,17 +74,31 @@
   <div class="alt-ic">
     <div class="alt-marka">
       <a class="logo" href="#/">
-        <img class="logo-isaret" src="gorseller/favicon.svg" alt="" width="36" height="36">
-        <span class="logo-yazi">Geldi Geçti <em>Hatıralar</em></span>
+        <img class="logo-isaret" src="gorseller/favicon.svg" alt="" width="40" height="40">
+        <span class="logo-yazi"><b>Geldi Geçti</b><em>Hatıralar</em></span>
       </a>
       <p data-slogan>Unutulmaya yüz tutmuş günlerin izinde.</p>
+      <a class="btn btn-ig btn-kucuk" data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" class="dolu"/></svg>
+        <span data-ig-ad>@geldigecti_hatiralar</span>
+      </a>
     </div>
-    <nav class="alt-linkler" aria-label="Alt menü">
-      <a href="#/">Akış</a><a href="#/kesfet">Keşfet</a><a href="#/reels">Reels</a><a href="#/hakkimizda">Hakkımızda</a>
-      <a data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
-    </nav>
-    <p class="alt-not">© <span data-yil>2026</span> Geldi Geçti Hatıralar · Fotoğraf ve yazılar <a data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener" data-ig-ad>@geldigecti_hatiralar</a> hesabından alınmıştır.</p>
+    <div class="alt-sutun">
+      <h4>Kategoriler</h4>
+      <nav id="alt-kategoriler" aria-label="Kategoriler"></nav>
+    </div>
+    <div class="alt-sutun">
+      <h4>Site</h4>
+      <nav aria-label="Site">
+        <a href="#/">Ana Sayfa</a>
+        <a href="#/hatiralar">Tüm Hatıralar</a>
+        <a href="#/reels">Reels</a>
+        <a href="#/hakkimizda">Hakkımızda</a>
+        <a href="#/hakkimizda">Hatıranı Gönder</a>
+      </nav>
+    </div>
   </div>
+  <div class="alt-not">© <span data-yil>2026</span> Geldi Geçti Hatıralar · Fotoğraf ve yazılar Instagram hesabımızdan alınmıştır.</div>
 </footer>
 
 <div class="bildirim" id="bildirim" role="status" aria-live="polite"></div>

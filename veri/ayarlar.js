@@ -13,6 +13,14 @@ window.AYARLAR = {
   // Boş bırakılırsa "Hatıranı Gönder" düğmesi Instagram mesajlarını açar.
   eposta: "",
 
+  // Ana sayfanın en üstündeki tanıtım videosu ve kapak resmi.
+  // Instagram'daki bir Reels videosunu buraya koyabilirsiniz (ör. "medya/2026-11/reel.mp4").
+  tanitimVideosu: "medya/tanitim.mp4",
+  tanitimKapak: "medya/tanitim-kapak.jpg",
+
+  // En üstteki ince duyuru şeridi (boş bırakılırsa gösterilmez)
+  duyuru: "Her gün yeni bir hatıra · Instagram’da @geldigecti_hatiralar",
+
   // Ana sayfadaki "Hakkımızda" yazısı
   hakkimizda: [
     "Geldi Geçti Hatıralar; mahalle aralarında kalan çocukluğumuzu, siyah-beyaz fotoğrafları, bakkal defterlerini ve tek kanallı televizyon akşamlarını bir araya getiren bir hatıra defteri.",
