@@ -1,15 +1,17 @@
 /* ==========================================================
    HATIRALAR (İÇERİK)
-   Şu anki kayıtlar ÖRNEKTİR. Instagram yedeğiniz (ZIP) geldiğinde
-   bu dosya "araclar/instagram-aktar.js" ile otomatik yeniden oluşturulur.
+   Şu anki kayıtlar ÖRNEKTİR: yazılar örnek olarak yazıldı, fotoğraflar
+   Wikimedia Commons'tan serbest lisanslı gerçek eski fotoğraflardır.
+   Instagram yedeğiniz (ZIP) geldiğinde bu dosya
+   "araclar/instagram-aktar.js" ile otomatik yeniden oluşturulur.
 
    Elle hatıra eklemek için en üste şu kalıpta bir kayıt ekleyin:
    {
      id: "kisa-ad",                     // benzersiz, Türkçe karaktersiz kısa ad
-     tarih: "2026-11-08",               // YYYY-AA-GG
+     tarih: "2026-11-08",               // YYYY-AA-GG (aylık albümler buna göre oluşur)
      tur: "foto",                       // "foto", "albüm" veya "reels"
      gorseller: ["medya/2026-11/foto1.jpg", "medya/2026-11/foto2.jpg"],
-     instagram: "https://www.instagram.com/p/XXXXXXX/",  // gönderinin Instagram bağlantısı
+     instagram: "https://www.instagram.com/p/XXXXXXX/",
      metin: `İlk satır başlık olur.
 
    Sonraki paragraflar yazının devamıdır. #etiket #nostalji`
@@ -17,171 +19,230 @@
    ========================================================== */
 window.ICERIK = [
   {
-    id: "bizim-mahalle",
-    tarih: "2026-11-03",
+    id: "sabah-aglari",
+    tarih: "2026-11-07",
     tur: "albüm",
-    gorseller: [{ sahne: "mahalle" }, { sahne: "bakkal" }, { sahne: "araba" }, { sahne: "telefon" }],
+    gorseller: ["medya/ornek/balikcilar-1.jpg", "medya/ornek/balikcilar-2.jpg", "medya/ornek/bogazda-kayik.jpg"],
     instagram: "",
-    metin: `Bizim Mahalle 🏘️
+    metin: `Sabah Ağları
 
-Kapı önünde oturan teyzeler, ip atlayan kızlar, top peşinde koşan oğlanlar… Akşam ezanı okununca sokak bir anda boşalır, her pencereden bir çorba kokusu yükselirdi.
+Şehir daha uyanmadan Boğaz’ın suyu kıpırdanırdı. Balıkçılar ağları sabırla çeker, martılar kayıkların etrafında dönüp dururdu. Kıyıdan bakan bir çocuk için o ağlar, denizin bütün sırlarını taşıyordu.
 
-Bakkal amcanın tezgâhında veresiye defteri, kapı önlerinde sohbet eden komşular, iplere dizilmiş çamaşırlar… Hepsi o sokaklarda kaldı.
+Akşam olunca o balıklar mahallenin tezgâhlarına, oradan da evlerin sofrasına inerdi. Hamsinin mevsimi, lüferin göçü takvimden önce bilinirdi.
 
-Sizin mahallenizde en çok neyi özlüyorsunuz? 👇
+Sizin denizle ilgili ilk hatıranız ne?
 
-#nostalji #mahalle #70ler #geldigectihatiralar`
+#boğaz #balıkçılar #eskiistanbul #50ler`
   },
   {
-    id: "karakoy-vapuru",
-    tarih: "2026-11-01",
+    id: "cay-simit-vapur",
+    kategori: "lezzet",
+    tarih: "2026-11-05",
     tur: "reels",
-    gorseller: [{ sahne: "vapur" }],
+    gorseller: ["medya/ornek/cay-simit.jpg"],
     instagram: "",
-    metin: `Karaköy–Kadıköy vapuru 🕊️
+    metin: `Çay, Simit ve Vapur
 
-Simit, çay ve martılar… Vapurun düdüğünü duyunca bütün iskele hareketlenirdi. Simidin yarısı bize, yarısı martılara.
+İnce belli bardakta tavşan kanı bir çay, yanında susamı bol bir simit… Vapur iskeleden ayrılırken simidin bir parçası mutlaka martılara giderdi.
 
-Bu sesi hatırlayan var mı?
+Kimi gazetesini açar, kimi denize dalardı. Yirmi dakikalık bir yolculuk, bütün günün en sakin anıydı.
 
-#eskiistanbul #vapur #karaköy #kadıköy #nostalji`
+#vapur #çay #simit #kadıköy #nostalji`
   },
   {
-    id: "veresiye-defteri",
-    tarih: "2026-10-31",
+    id: "sucu-gecti-sokaktan",
+    tarih: "2026-11-03",
     tur: "foto",
-    gorseller: [{ sahne: "bakkal" }],
+    gorseller: ["medya/ornek/sucu-1966.jpg"],
     instagram: "",
-    metin: `Bakkal Amcanın Veresiye Defteri 📒
+    metin: `Sucu Geçti Sokaktan
 
-“Babam akşam gelince öder” demek yeterdi. Tezgâhın üstünde, köşeleri kıvrılmış kalın bir defter dururdu; her sayfada bir ailenin adı, altında kurşun kalemle yazılmış rakamlar…
+Sırtında güğümü, belinde bakır taslarıyla sucu, sokağın ritmini belirleyen seslerden biriydi. “Buz gibi su!” diye seslendiğinde pencerelerden sepetler iner, çocuklar koşardı.
 
-Ay sonunda babalar gelir, hesap kapanır, sayfanın üstüne bir çizgi çekilirdi. Kimse senet istemez, kimse imza atmazdı. Güven, defterin kendisiydi.
+Sokağın bir saati vardı: sabah simitçi, öğlen sucu, akşamüstü macuncu. O saat, seslerle işlerdi.
 
-#bakkal #veresiye #mahalle #nostalji`
+Bu fotoğraf 1966 yılında İstanbul’da çekilmiş.
+
+#sokaksatıcıları #mahalle #60lar #eskiistanbul`
+  },
+  {
+    id: "galata-kulesinin-golgesinde",
+    tarih: "2026-11-01",
+    tur: "albüm",
+    gorseller: ["medya/ornek/galata-kulesi.jpg", "medya/ornek/galata-pera.jpg"],
+    instagram: "",
+    metin: `Galata Kulesi’nin Gölgesinde
+
+Yokuşun başında kule, dibinde çınarlar, ağır ağır geçen insanlar… Galata’nın sokakları turistlerle dolmadan önce, mahallenin çocukları o yokuşlarda bisiklet sürerdi.
+
+Kulenin tepesinden bakınca bütün şehir bir kartpostala dönerdi: Haliç, köprü, camilerin kubbeleri ve sisin içinden geçen vapurlar.
+
+#galata #kule #beyoğlu #eskiistanbul`
   },
   {
     id: "yayin-kapanisi",
     tarih: "2026-10-29",
     tur: "reels",
-    gorseller: [{ sahne: "televizyon" }],
+    gorseller: ["medya/ornek/eski-televizyon.jpg"],
     instagram: "",
-    metin: `Yayın kapanışı 📺
+    metin: `Yayın Kapanışı
 
 Gece yayın biterken ekranda bayrak dalgalanır, İstiklal Marşı çalardı. Sonra o tanıdık hışırtı ve karıncalı ekran… Ev sessizleşir, herkes yatmaya giderdi.
 
-Bir günün bittiğini televizyon söylerdi.
+Tek kanallı günlerde televizyon, evin baş köşesinde dantel örtüsüyle oturan bir misafirdi. Bir günün bittiğini o söylerdi.
 
 #trt #televizyon #tekkanal #70ler`
   },
   {
     id: "jeton-bitmeden",
-    tarih: "2026-10-28",
+    tarih: "2026-10-26",
     tur: "albüm",
-    gorseller: [{ sahne: "telefon" }, { sahne: "tramvay" }, { sahne: "mahalle" }],
+    gorseller: ["medya/ornek/cevirmeli-telefon-siyah.jpg", "medya/ornek/cevirmeli-telefon-sari.jpg"],
     instagram: "",
-    metin: `Jeton Bitmeden ☎️
+    metin: `Jeton Bitmeden
 
-Evde telefon olmayan yıllarda haber vermek için en yakın kulübeye gidilirdi. Cepte jetonlar şıkırdar, kulübenin önünde sıra beklenirdi.
+Numaraları bir deftere değil, hafızamıza yazardık. Kadranı çevirirken parmak deliğe takılır, her rakam kendi sesiyle geri dönerdi.
 
-Karşı taraf açar açmaz konuşmaya başlanırdı; çünkü her an “tık” diye jetonun düştüğünü ve hattın kesileceğini biliyorduk. Numaraları bir deftere değil, hafızamıza yazardık.
+Evde telefon yoksa en yakın kulübeye gidilir, jetonun düşme sesi konuşmanın ne kadar süreceğini belirlerdi. Önemli cümleler başa alınır, “Sesin gidiyor!” diye bağırılırdı.
 
-Siz en son kimi aramıştınız?
+Siz en son kimi ezbere aramıştınız?
 
 #jeton #telefon #80ler #nostalji`
   },
   {
-    id: "televizyonun-ustundeki-dantel",
-    tarih: "2026-10-24",
-    tur: "foto",
-    gorseller: [{ sahne: "televizyon" }],
-    instagram: "",
-    metin: `Televizyonun Üstündeki Dantel 🧶
-
-Hemen her evde aynı manzara vardı: tüplü televizyonun üstüne serilmiş, annemizin ya da anneannemizin elleriyle ördüğü beyaz bir dantel. Üstünde bazen cam bir balık, bazen porselen bir biblo…
-
-Misafir odası özenle hazırlanır, kapısı çoğu zaman kapalı tutulurdu. Sizin evinizde de var mıydı?
-
-#dantel #televizyon #misafirodası #80ler`
-  },
-  {
-    id: "kursun-kalemle-kaset",
+    id: "bakkal-amcanin-raflari",
     tarih: "2026-10-22",
-    tur: "reels",
-    gorseller: [{ sahne: "kaset" }],
-    instagram: "",
-    metin: `Kurşun kalemle kaset sarmayan kaldı mı? ✏️📼
-
-Kaset bant attığında kalem yuvaya takılır, sabırla çevrilirdi. Kapağına kendi el yazımızla şarkı listesi yazılırdı. Bir kaseti hediye etmek, aslında birine kalbini dinletmekti.
-
-#kaset #walkman #90lar #müzik`
-  },
-  {
-    id: "haydarpasa-onlerinde",
-    tarih: "2026-10-20",
-    tur: "albüm",
-    gorseller: [{ sahne: "vapur" }, { sahne: "tramvay" }],
-    instagram: "",
-    metin: `Haydarpaşa Önlerinde Bir Sabah 🌅
-
-Eski İstanbul’dan bir sabah. Vapurun dumanı ağır ağır göğe yükselirken iskelede simitçinin sesi yankılanır, martılar daha vapur kalkmadan etrafı sarardı.
-
-Yolcuların kimi gazetesini açar, kimi çayını yudumlar, kimi de sadece denizi seyrederdi.
-
-#haydarpaşa #eskiistanbul #vapur #boğaz`
-  },
-  {
-    id: "once-play-sonra-rec",
-    tarih: "2026-10-16",
     tur: "foto",
-    gorseller: [{ sahne: "kaset" }],
+    gorseller: ["medya/ornek/bakkal-rafi.jpg"],
     instagram: "",
-    metin: `Önce Play, Sonra Rec 🎶
+    metin: `Bakkal Amcanın Rafları
 
-Radyodan şarkı kaydetmek ayrı bir sanattı. Parmak düğmenin üstünde bekler, şarkının ilk notasında basardık. Ama çoğu zaman şarkının son saniyesinde spiker araya girerdi.
+Teneke kutular yan yana dizilir, vitrinde salça, sardalya, zeytinyağı parıldardı. Tezgâhın üstünde köşeleri kıvrılmış kalın bir defter dururdu: veresiye defteri.
 
-O kasetlerde şarkılar hep yarım biterdi ama yine de en sevdiğimiz onlar olurdu.
+“Babam akşam gelince öder” demek yeterdi. Kimse senet istemez, kimse imza atmazdı. Güven, defterin kendisiydi.
 
-#kaset #radyodan #müzik #90lar`
+#bakkal #veresiye #mahalle #nostalji`
   },
   {
     id: "babamin-ilk-arabasi",
-    tarih: "2026-10-14",
+    tarih: "2026-10-18",
     tur: "reels",
-    gorseller: [{ sahne: "araba" }],
+    gorseller: ["medya/ornek/murat-124-kirmizi.jpg"],
     instagram: "",
-    metin: `Babamın ilk arabası 🚗
+    metin: `Babamın İlk Arabası
 
-Pazar sabahları kapının önünde hortum, kova ve sabun köpüğü… Bütün mahalle arabasını yıkar, radyodan eski bir şarkı yükselirdi.
+Pazar sabahları kapının önünde hortum, kova ve köpük… Bütün mahalle arabasını yıkar, radyodan eski bir şarkı yükselirdi. Kaputun üstünde güneşlenen kedi de bu manzaranın ayrılmaz parçasıydı.
 
-Sizin evin ilk arabası neydi? Murat mı, Anadol mu?
+Sizin evin ilk arabası neydi?
 
-#klasikaraba #murat124 #anadol #nostalji`
+#murat124 #klasikaraba #70ler #nostalji`
   },
   {
-    id: "beyoglunda-bir-pazar",
-    tarih: "2026-10-08",
+    id: "anadollu-yillar",
+    tarih: "2026-10-12",
     tur: "albüm",
-    gorseller: [{ sahne: "tramvay" }, { sahne: "vapur" }, { sahne: "araba" }],
+    gorseller: ["medya/ornek/anadol-mavi.jpg", "medya/ornek/anadol-kirmizi.jpg"],
     instagram: "",
-    metin: `Beyoğlu’nda Bir Pazar 🚋
+    metin: `Anadol’lu Yıllar
 
-Kalabalık caddede ağır ağır ilerleyen tramvay, vitrinlere bakan insanlar, köşede kestane kebap kokusu… Çanın sesi duyulunca herkes kenara çekilirdi.
+Gövdesi elyaftı, sesi bir kamyonu andırırdı ama yollarda gururla dolaşırdı. Yazlığa gidilirken bagaja sığmayan eşyalar tavana bağlanır, arka koltukta çocuklar uyuyakalırdı.
 
-#beyoğlu #tramvay #eskiistanbul #istiklal`
+Mola yerlerinde çay içilir, motorun soğuması beklenirdi. Yolculuk, varılacak yerden daha güzeldi.
+
+#anadol #klasikaraba #yazlık #70ler`
   },
   {
-    id: "gazoz-kapaklari",
-    tarih: "2026-10-04",
+    id: "karakoyde-biten-bir-cag",
+    tarih: "2026-10-05",
     tur: "foto",
-    gorseller: [{ sahne: "bakkal" }],
+    gorseller: ["medya/ornek/karakoy-1960lar.jpg"],
     instagram: "",
-    metin: `Gazoz Kapakları 🪙
+    metin: `Karaköy’de Biten Bir Çağ
 
-Yere düşmüş bir gazoz kapağı, bir çocuk için madeni para kadar değerliydi. Akşam olunca bütün kapaklar yere dökülür, tek tek sayılırdı.
+Ahşap çatılar, köşede bekleyen arabalar ve yıkımı seyreden birkaç meraklı… Şehir değişirken bazı binalar sessizce veda etti.
 
-Kimin elinde daha nadir bir kapak varsa o günün en zengini oydu. Paranın değil, paylaşmanın ve takasın öğrenildiği ilk pazar yeri belki de o kapak yığınlarıydı.
+Bu fotoğraf, Karaköy’deki eski Tünel binasının yıkımını gösteriyor. Her yıkılan duvarla birlikte bir mahallenin hafızası da biraz eksildi.
 
-#gazozkapağı #çocukluk #oyun #60lar`
+#karaköy #tünel #eskiistanbul #60lar`
+  },
+  {
+    id: "sicak-simit-taze-gevrek",
+    tarih: "2026-09-28",
+    tur: "foto",
+    gorseller: ["medya/ornek/simit-firini.jpg"],
+    instagram: "",
+    metin: `Sıcak Simit, Taze Gevrek
+
+Fırının kapısı açıldığında bütün sokak susam kokardı. Okula giderken cebimizdeki bozuk paralar en çok buraya harcanırdı.
+
+Ustanın küreği taş fırının içine her girdiğinde, bir sabah daha başlardı.
+
+#simit #fırın #mahalle #lezzet`
+  },
+  {
+    id: "tramvay-cani",
+    tarih: "2026-09-14",
+    tur: "foto",
+    gorseller: ["medya/ornek/istiklal-tramvay.jpg"],
+    instagram: "",
+    metin: `Tramvay Çanı
+
+Kalabalık caddede ağır ağır ilerleyen kırmızı tramvay, çanını çaldığında herkes kenara çekilirdi. Basamağına asılıp birkaç durak bedava gitmek, çocukların en büyük macerasıydı.
+
+#tramvay #istiklal #beyoğlu #eskiistanbul`
+  },
+  {
+    id: "okul-kapisinda",
+    tarih: "2026-09-02",
+    tur: "foto",
+    gorseller: ["medya/ornek/universite-kapisi.jpg"],
+    instagram: "",
+    metin: `Okul Kapısında
+
+Eylül gelince önlükler ütülenir, defterlerin kapakları mavi kâğıtla kaplanırdı. Büyük kapının önünde verilen fotoğraflar, aile albümlerinin en kıymetli sayfaları olurdu.
+
+İlk gün heyecanla, son gün hüzünle geçilen o kapılar hâlâ yerinde duruyor.
+
+#okul #eylül #önlük #nostalji`
+  },
+  {
+    id: "teneffus-zili",
+    tarih: "2025-11-10",
+    tur: "foto",
+    gorseller: ["medya/ornek/cocuklar-oyun.jpg"],
+    instagram: "",
+    metin: `Teneffüs Zili
+
+Zil çaldığı anda koridorlar boşalır, bahçe bir anda çocuk sesleriyle dolardı. Kimi ip atlar, kimi misket oynar, kimi de demirlere tırmanıp en yükseğe çıkmaya çalışırdı.
+
+On dakikalık bir teneffüs, bütün bir yaz kadar uzun gelirdi.
+
+#çocukluk #teneffüs #oyun #okul`
+  },
+  {
+    id: "eski-koprunun-uzerinde",
+    tarih: "2025-11-03",
+    tur: "foto",
+    gorseller: ["medya/ornek/galata-koprusu-eski.jpg"],
+    instagram: "",
+    metin: `Eski Köprünün Üzerinde
+
+Arabalar, hamallar, satıcılar ve iki yaka arasında gidip gelen kalabalık… Eski Galata Köprüsü, şehrin kalbinin attığı yerdi.
+
+Altındaki dükkânlarda balık ekmek kokusu, üstünde oltasını sallayan sabırlı balıkçılar… Köprü değişti ama o kalabalığın sesi hâlâ kulağımızda.
+
+#galatakoprusu #eskiistanbul #haliç #nostalji`
+  },
+  {
+    id: "ilk-murat",
+    tarih: "2024-11-15",
+    tur: "foto",
+    gorseller: ["medya/ornek/ilk-murat-124.jpg"],
+    instagram: "",
+    metin: `İlk Murat
+
+Fabrikadan çıkan ilk arabalardan biri… Beyaz gövdesi, yuvarlak farlarıyla bir dönemin sembolüydü. Mahallede kimin kapısının önünde dursa, o ev bir anda herkesin uğrak yeri olurdu.
+
+#murat124 #klasikaraba #70ler`
   }
 ];

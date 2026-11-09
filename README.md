@@ -3,13 +3,16 @@
 Instagram’daki **@geldigecti_hatiralar** hesabının fotoğraflarını ve hatıra yazılarını yayınlayan site.
 Her hatıranın yanında **“Instagram’da gör / izle”** bağlantısı vardır; ziyaretçi tıklayınca Instagram’a geçer.
 
-- **Ana sayfa:** En üstte tam genişlik tanıtım videosu, altında resimli kategori kutuları,
-  ardından her kategorinin hatıraları kendi bölümünde, Reels şeridi ve Instagram bölümü.
-- **Kategori sayfası:** Bir kategorinin bütün hatıraları (en yeni / en eski sıralama).
-- **Bütün hatıralar:** Arama ve kategori süzme.
-- **Reels:** Reels kapakları ve yazıları. Videolar Instagram’da izlenir.
-- **Hatıra sayfası:** Kaydırmalı fotoğraflar, yazının tamamı, etiketler, paylaş, benzer hatıralar.
-- **Koyu / açık tema**, telefona tam uyum, yazı tipleri sitede barındırılır (Google’a bağlanmaz).
+Edebî bir hatıra almanağı gibi çalışır:
+
+- **Bugün (ana sayfa):** Arkada eski fotoğraflardan oluşan tanıtım videosu, arama ve hatıra rafları;
+  altında her gün değişen **takvim yaprağı** (günün sözü, geçmişte bugün, “yaprağı kopar”),
+  **kaldığın yerden** (ziyaretçinin okuduğu hatıraları hatırlar), **bu ayın albümü**, öne çıkan hatıra,
+  raflar, **hatıra arşivi** ve **geçen yıllarda bu ay**.
+- **Aylık albümler:** Her ayın hatıraları bir albüm (dergi sayısı gibi). Arşivden geçmiş aylara gidilir.
+- **Raflar (kategoriler), Keşfet (arama), etiket sayfaları.**
+- **Okuma sayfası:** Fotoğraflar alt alta, yazı edebî düzende, Instagram’a bağlantı, önceki/sonraki sayfa.
+- **Telefonda alt menü**, koyu/açık tema, yazı tipleri sitede barındırılır (Google’a bağlanmaz).
 
 Kurulum gerekmez: düz HTML + CSS + JavaScript. Her web hostinginde (IONOS dahil) çalışır.
 
@@ -22,14 +25,17 @@ Kurulum gerekmez: düz HTML + CSS + JavaScript. Her web hostinginde (IONOS dahil
 | `index.html` | Sitenin ana sayfası |
 | `veri/ayarlar.js` | **Ayarlar:** Instagram adı, e-posta, tanıtım videosu, duyuru şeridi, Hakkımızda yazısı, kategoriler |
 | `veri/icerik.js` | **Hatıralar:** bütün yazılar ve fotoğraf yolları |
+| `veri/fotograf-kaynaklari.js` | Örnek fotoğrafların fotoğrafçı ve lisans bilgileri |
 | `medya/` | Instagram’dan aktarılan fotoğraflar |
 | `css/`, `js/`, `fontlar/`, `gorseller/` | Tasarım ve çalışma dosyaları |
 | `araclar/instagram-aktar.js` | Instagram yedeğini siteye aktaran araç (sunucuya yüklemeye gerek yok) |
 | `.htaccess`, `404.html`, `robots.txt` | IONOS sunucu ayarları |
 
-> Şu an `veri/icerik.js` içindeki hatıralar **örnektir**; görseller temsili çizimlerdir.
-> Ana sayfadaki `medya/tanitim.mp4` videosu da örnektir. Kendi Reels videolarınızdan birini koymak için
-> dosyayı `medya/` klasörüne kopyalayıp `veri/ayarlar.js` içindeki `tanitimVideosu` satırını değiştirin.
+> Şu an `veri/icerik.js` içindeki yazılar **örnektir**. Fotoğraflar (`medya/ornek/`) Wikimedia Commons’tan
+> serbest lisanslı gerçek eski fotoğraflardır; fotoğrafçı ve lisans adı her fotoğrafın altında ve
+> “Fotoğraf kaynakları” sayfasında gösterilir. Ana sayfadaki `medya/tanitim.mp4` bu fotoğraflardan yapılmıştır.
+> Instagram içeriğiniz aktarıldığında bunlara gerek kalmaz; kendi videonuzu `veri/ayarlar.js` içindeki
+> `tanitimVideosu` satırından seçebilirsiniz.
 
 ## Bilgisayarda açıp bakmak
 
