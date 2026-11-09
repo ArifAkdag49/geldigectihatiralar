@@ -10,6 +10,14 @@ Options -Indexes
 AddType font/woff2 .woff2
 AddType image/svg+xml .svg
 AddType image/webp .webp
+AddType application/manifest+json .webmanifest
+
+# Çevrimdışı okuma dosyası her zaman güncel kontrol edilsin
+<IfModule mod_headers.c>
+  <FilesMatch "^sw\.js$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
 
 # HTTPS'e yönlendirme — SSL sertifikası etkinleştirildikten sonra
 # aşağıdaki 3 satırın başındaki # işaretlerini kaldırın:

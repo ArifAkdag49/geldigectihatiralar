@@ -1,7 +1,7 @@
 # Geldi Geçti Hatıralar — Web Sitesi
 
 Instagram’daki **@geldigecti_hatiralar** hesabının fotoğraflarını ve hatıra yazılarını yayınlayan site.
-Her hatıranın yanında **“Instagram’da gör / izle”** bağlantısı vardır; ziyaretçi tıklayınca Instagram’a geçer.
+Site Instagram görünümünde değildir; kendine has, edebî bir tasarımı vardır.
 
 Edebî bir hatıra almanağı gibi çalışır:
 
@@ -12,7 +12,8 @@ Edebî bir hatıra almanağı gibi çalışır:
 - **Aylık albümler:** Her ayın hatıraları bir albüm (dergi sayısı gibi). Arşivden geçmiş aylara gidilir.
 - **Raflar (kategoriler), Keşfet (arama), etiket sayfaları.**
 - **Okuma sayfası:** Fotoğraflar alt alta, yazı edebî düzende, Instagram’a bağlantı, önceki/sonraki sayfa.
-- **Telefonda alt menü**, koyu/açık tema, yazı tipleri sitede barındırılır (Google’a bağlanmaz).
+- **Telefonda uygulama gibi:** yandan açılan menü, “Ana ekrana ekle” ile kurulabilir, bir kez açılan sayfalar
+  internet yokken de okunur. Koyu/açık tema, yazı tipleri sitede barındırılır (Google’a bağlanmaz).
 
 Kurulum gerekmez: düz HTML + CSS + JavaScript. Her web hostinginde (IONOS dahil) çalışır.
 
@@ -29,6 +30,7 @@ Kurulum gerekmez: düz HTML + CSS + JavaScript. Her web hostinginde (IONOS dahil
 | `medya/` | Instagram’dan aktarılan fotoğraflar |
 | `css/`, `js/`, `fontlar/`, `gorseller/` | Tasarım ve çalışma dosyaları |
 | `araclar/instagram-aktar.js` | Instagram yedeğini siteye aktaran araç (sunucuya yüklemeye gerek yok) |
+| `manifest.webmanifest`, `sw.js` | Telefonda “Ana ekrana ekle” ve internetsiz okuma |
 | `.htaccess`, `404.html`, `robots.txt` | IONOS sunucu ayarları |
 
 > Şu an `veri/icerik.js` içindeki yazılar **örnektir**. Fotoğraflar (`medya/ornek/`) Wikimedia Commons’tan
@@ -89,7 +91,7 @@ GitHub’da depoyu açın → **Code → Download ZIP** → ZIP’i bilgisayarı
 **Yol A — Tarayıcıdan (en kolayı):**
 1. ionos.com’a giriş yapın → **Menü → Hosting** → paketinizi seçin → **Webspace** (Webspace Explorer).
 2. Yeni bir klasör oluşturun, ör. `geldigecti`.
-3. Klasörün içine şunları yükleyin: `index.html`, `404.html`, `.htaccess`, `robots.txt` ve `css`, `js`, `fontlar`, `gorseller`, `medya`, `veri` klasörleri.
+3. Klasörün içine şunları yükleyin: `index.html`, `404.html`, `.htaccess`, `robots.txt`, `manifest.webmanifest`, `sw.js` ve `css`, `js`, `fontlar`, `gorseller`, `medya`, `veri` klasörleri.
    (`araclar` klasörünü ve `README.md`’yi yüklemeniz gerekmez.)
    Mac’te `.htaccess` gizli dosyadır; Finder’da **Cmd + Shift + .** ile görünür yapın.
 

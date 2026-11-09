@@ -1,0 +1,18 @@
+{
+  "name": "Geldi Geçti Hatıralar",
+  "short_name": "Geldi Geçti",
+  "description": "Unutulmaya yüz tutmuş günlerin izinde: fotoğraflar, hatıralar ve hikâyeler.",
+  "lang": "tr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f6f1e7",
+  "theme_color": "#16233a",
+  "categories": ["books", "lifestyle", "photo"],
+  "icons": [
+    { "src": "gorseller/ikon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "gorseller/ikon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "gorseller/ikon-maske-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

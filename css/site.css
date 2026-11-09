@@ -55,6 +55,7 @@
 
 /* ---------- Temel ---------- */
 *,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
 body{margin:0;overflow-x:clip;background:var(--kagit);color:var(--metin);font-family:var(--f-arac);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
 img,svg,video{display:block;max-width:100%}
@@ -315,8 +316,37 @@ svg .dolu{fill:currentColor;stroke:none}
 .alt-not{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:13px;opacity:.7}
 .alt-not a{text-decoration:underline;text-underline-offset:2px}
 
-/* ---------- Alt sekme çubuğu (telefon) ---------- */
-.alt-sekme{display:none}
+/* ---------- Çekmece menü (telefon / tablet) ---------- */
+.menu-btn{display:none}
+.cekmece{position:fixed;top:0;bottom:0;left:0;z-index:100;width:min(330px,86vw);background:var(--kart);color:var(--metin);display:flex;flex-direction:column;overflow-y:auto;overscroll-behavior:contain;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px);transform:translateX(-102%);transition:transform .32s cubic-bezier(.3,.7,.2,1);box-shadow:0 0 40px rgba(0,0,0,.25);visibility:hidden}
+.cekmece.acik{transform:none;visibility:visible}
+.cekmece-ortu{position:fixed;inset:0;z-index:90;background:rgba(10,16,28,.55);backdrop-filter:blur(2px)}
+.cekmece-ust{display:flex;align-items:center;justify-content:space-between;padding:16px 12px 16px 22px;background:var(--murekkep);color:#f4eddc}
+.cekmece-menu{display:flex;flex-direction:column;padding:10px 10px 6px}
+.cekmece-menu a{display:flex;align-items:center;gap:14px;font-size:16px;font-weight:600;padding:13px 12px;border-radius:8px;color:var(--metin-2)}
+.cekmece-menu a svg{color:var(--soluk)}
+.cekmece-menu a.aktif{background:var(--kagit);color:var(--metin)}
+.cekmece-menu a.aktif svg{color:var(--cay)}
+.cekmece-baslik{font-size:11.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--soluk);padding:16px 22px 8px;border-top:1px solid var(--cizgi);margin-top:6px}
+.cekmece-raflar{display:flex;flex-direction:column;padding:0 10px}
+.cekmece-raflar a{display:flex;justify-content:space-between;font-family:var(--f-yazi);font-size:18px;padding:10px 12px;border-radius:8px}
+.cekmece-raflar a small{font-family:var(--f-arac);font-size:13px;color:var(--soluk);font-weight:600}
+.cekmece-raflar a:hover,.cekmece-menu a:hover{background:var(--kagit)}
+.cekmece-alt{margin-top:auto;display:flex;flex-direction:column;gap:10px;padding:20px 22px 24px}
+body.cekmece-acik{overflow:hidden}
+
+/* ---------- Uygulama hissi ---------- */
+html{-webkit-tap-highlight-color:transparent}
+.gorunum{animation:gir .35s ease both}
+@keyframes gir{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.gonder-bant{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);background:var(--murekkep);color:#f4eddc;border-radius:6px;overflow:hidden}
+.gonder-bant .yazi{padding:40px 38px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+.gonder-bant .etiket{color:var(--kehribar)}
+.gonder-bant h3{font-size:clamp(26px,3vw,36px)}
+.gonder-bant p{color:rgba(244,237,220,.8);max-width:460px}
+.gonder-bant .btn{align-self:flex-start;margin-top:8px}
+.gonder-bant .foto{min-height:260px}
+.gonder-bant .foto img{filter:sepia(.3) contrast(1.05)}
 
 /* ---------- Bildirim ---------- */
 .bildirim{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));z-index:300;transform:translate(-50%,16px);background:var(--metin);color:var(--kagit);font-weight:600;font-size:14.5px;padding:12px 18px;border-radius:6px;box-shadow:var(--golge);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:calc(100vw - 32px)}
@@ -329,19 +359,17 @@ svg .dolu{fill:currentColor;stroke:none}
   .bugun{grid-template-columns:1fr}
   .takvim{max-width:460px;width:100%;margin:0 auto}
   .yazi-izgara.uclu{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .alt-sekme{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--kart);border-top:1px solid var(--cizgi);padding:6px max(6px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(6px,env(safe-area-inset-left,0px));justify-content:space-around}
-  .alt-sekme a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:600;color:var(--soluk);padding:6px 2px}
-  .alt-sekme a.aktif{color:var(--cay)}
-  body{padding-bottom:calc(64px + env(safe-area-inset-bottom,0px))}
-  .bildirim{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .menu-btn{display:grid;margin-left:-8px}
 }
 @media (max-width:720px){
   .ust-ic{height:60px;gap:12px}
   .logo-yazi b{font-size:16px}
   .logo-yazi small{font-size:9px}
   .logo-isaret{width:34px;height:34px}
-  .ig-dugme span{display:none}
-  .ig-dugme{padding:9px}
+  .ust-ic{padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(10px,env(safe-area-inset-right,0px))}
+  .gonder-bant{grid-template-columns:1fr}
+  .gonder-bant .foto{min-height:200px;order:-1}
+  .gonder-bant .yazi{padding:28px 22px}
   .vitrin-ic{padding-top:52px;padding-bottom:44px}
   .video-dugme{top:12px;bottom:auto;width:36px;height:36px}
   .cipler{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;margin-left:-20px;margin-right:-20px;padding:0 20px;scrollbar-width:none}

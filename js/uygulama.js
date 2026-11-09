@@ -106,7 +106,7 @@
       tarih: tarih, tarihMetni: tarihYaz(tarih), ay: tarih.slice(0, 7),
       tur: tur, reels: tur === "reels",
       gorseller: gorseller.length ? gorseller : [{ sahne: "mahalle" }],
-      instagram: h.instagram || IG_PROFIL,
+      instagram: h.instagram || IG_PROFIL, ozelLink: !!h.instagram,
       baslik: baslik, paragraflar: paragraflar,
       soz: ilkCumle((paragraflar[0] || duz).replace(ETIKET_RE, "")),
       ozet: duz.length > 200 ? duz.slice(0, 195).replace(/\s+\S*$/, "") + "…" : duz,
@@ -142,7 +142,7 @@
   }
   function kapakGorsel(h) { return h.gorseller[0]; }
   function rozet(h) {
-    if (h.reels) return '<span class="rozet">' + IKON.reels + "Reels</span>";
+    if (h.reels) return '<span class="rozet">' + IKON.reels + "Video</span>";
     if (h.gorseller.length > 1) return '<span class="rozet">' + IKON.album + h.gorseller.length + " fotoğraf</span>";
     return "";
   }
@@ -253,9 +253,9 @@
         }).join("") + "</div>" +
       "</div></section>" : "") +
 
-      '<section class="bolum" style="padding-top:0"><div class="kap"><div class="mektup">' +
-        '<div><span class="etiket">Hatıra defteri</span><h3>Sizin de bir hatıranız var mı?</h3><p>Eski bir fotoğraf, bir anı, bir hikâye… Gönderin; seçilenleri sitemizde ve Instagram sayfamızda yayımlayalım.</p><a class="btn btn-cay" href="#/hakkimizda">Hatıranı gönder</a></div>' +
-        '<div class="zarf"><span class="etiket">Her yeni hatıra</span><h3>Önce Instagram’da paylaşılır.</h3><p>Yeni fotoğraf ve hikâyeleri kaçırmamak için bizi takip edin, yorumlarda kendi hatıranızı yazın.</p><a class="btn btn-ig" href="' + IG_PROFIL + '" target="_blank" rel="noopener">' + IKON.ig + "@" + kac(IG) + "</a></div>" +
+      '<section class="bolum" style="padding-top:0"><div class="kap"><div class="gonder-bant">' +
+        '<div class="yazi"><span class="etiket">Hatıra defteri</span><h3>Sizin de bir hatıranız var mı?</h3><p>Eski bir fotoğraf, bir anı, bir hikâye… Bize gönderin; seçilen hatıralar bu sayfalarda yayımlansın.</p><a class="btn btn-cay" href="#/hakkimizda">Hatıranı gönder</a></div>' +
+        '<div class="foto">' + (TUM[2] ? gorselHTML(kapakGorsel(TUM[2]), "") : "") + "</div>" +
       "</div></div></section>";
 
     var v = $("#vitrin-video"), vd = $("#video-dugme");
@@ -359,12 +359,12 @@
       return "<figure>" + gorsel + (k ? '<figcaption>Fotoğraf: ' + kac(k.yazar) + " · " + kac(k.lisans) + ' · <a href="' + kac(k.kaynak) + '" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption>' : "") + "</figure>";
     }
     main.innerHTML = '<article class="okuma"><nav class="kirinti" aria-label="Konum"><a href="#/">Bugün</a><span>/</span><a href="#/album/' + kac(h.ay) + '">' + kac(ayYaz(h.ay)) + '</a><span>/</span><a href="#/raf/' + kac(h.kat.id) + '">' + kac(h.kat.ad) + "</a></nav>" +
-      '<header class="okuma-bas">' + etiketSatiri(h) + "<h1>" + kac(h.baslik) + '</h1><p class="meta">' + kac(h.tarihMetni) + ' · <a href="#/album/' + kac(h.ay) + '">' + kac(ayYaz(h.ay)) + " albümü</a>" + (h.reels ? " · Reels" : h.gorseller.length > 1 ? " · " + h.gorseller.length + " fotoğraf" : "") + "</p></header>" +
+      '<header class="okuma-bas">' + etiketSatiri(h) + "<h1>" + kac(h.baslik) + '</h1><p class="meta">' + kac(h.tarihMetni) + ' · <a href="#/album/' + kac(h.ay) + '">' + kac(ayYaz(h.ay)) + " albümü</a>" + (h.reels ? " · Video" : h.gorseller.length > 1 ? " · " + h.gorseller.length + " fotoğraf" : "") + "</p></header>" +
       '<div class="fotolar">' + h.gorseller.map(function (g, n) { return figur(g, n + 1); }).join("") + "</div>" +
-      (h.reels ? '<div class="reels-not"><span>Bu hatıranın videosu Instagram’da.</span><a class="btn btn-ig" href="' + kac(h.instagram) + '" target="_blank" rel="noopener">' + IKON.ig + "Instagram’da izle</a></div>" : "") +
+      (h.reels ? '<div class="reels-not"><span>Bu hatıranın bir de videosu var.</span><a class="btn btn-cizgi" href="' + kac(h.instagram) + '" target="_blank" rel="noopener">' + IKON.reels + "Videoyu izle ↗</a></div>" : "") +
       '<div class="metin">' + (h.paragraflar.length ? h.paragraflar.map(function (p) { return "<p>" + metinHTML(p) + "</p>"; }).join("") : "<p>" + kac(h.ozet) + "</p>") + "</div>" +
       (h.etiketler.length ? '<div class="etiketler">' + h.etiketler.map(function (e) { return '<a href="#/etiket/' + encodeURIComponent(e) + '">#' + kac(e) + "</a>"; }).join("") + "</div>" : "") +
-      '<div class="okuma-eylem"><a class="btn btn-ig" href="' + kac(h.instagram) + '" target="_blank" rel="noopener">' + IKON.ig + (h.reels ? "Instagram’da izle" : "Instagram’da gör") + "</a>" +
+      '<div class="okuma-eylem">' + (h.ozelLink && !h.reels ? '<a class="btn btn-cizgi" href="' + kac(h.instagram) + '" target="_blank" rel="noopener">Orijinal paylaşım ↗</a>' : "") +
         '<button class="btn btn-cizgi" type="button" data-paylas="' + kac(h.id) + '">' + IKON.paylas + "Paylaş</button></div>" +
       '<nav class="gezinme" aria-label="Diğer hatıralar">' +
         (yeni ? '<a href="#/hatira/' + kac(yeni.id) + '"><small>← Önceki sayfa</small><b>' + kac(yeni.baslik) + "</b></a>" : "<span></span>") +
@@ -379,9 +379,9 @@
     var link = e ? "mailto:" + e + "?subject=" + encodeURIComponent("Hatıram") : "https://ig.me/m/" + IG;
     main.innerHTML = '<div class="kap"><header class="sayfa-ust"><span class="etiket">Hikâyemiz</span><h1>Geldi geçti, hatıra kaldı.</h1></header>' +
       '<div class="duz-metin">' + (A.hakkimizda || []).map(function (p) { return "<p>" + kac(p) + "</p>"; }).join("") + "</div>" +
-      '<div class="mektup" style="padding-bottom:80px"><div id="gonder"><span class="etiket">Hatıra defteri</span><h3>Hatıranı gönder</h3><p>Eski bir fotoğrafınız, anlatmak istediğiniz bir hatıranız mı var? Gönderin; seçilen hatıralar sitemizde ve Instagram sayfamızda yayımlansın.</p>' +
-      '<a class="btn btn-cay" href="' + kac(link) + '" target="_blank" rel="noopener">' + (e ? "E-posta ile gönder" : "Instagram’dan mesaj gönder") + "</a>" + (e ? '<p style="margin:14px 0 0">E-posta: <b>' + kac(e) + "</b></p>" : "") + "</div>" +
-      '<div class="zarf"><span class="etiket">Instagram</span><h3>@' + kac(IG) + '</h3><p>Her yeni hatıra önce Instagram’da paylaşılır.</p><a class="btn btn-ig" href="' + IG_PROFIL + '" target="_blank" rel="noopener">' + IKON.ig + "Takip et</a></div></div></div>";
+      '<div class="gonder-bant" id="gonder" style="margin-bottom:80px"><div class="yazi"><span class="etiket">Hatıra defteri</span><h3>Hatıranı gönder</h3><p>Eski bir fotoğrafınız, anlatmak istediğiniz bir hatıranız mı var? Bize yazın; seçilen hatıralar bu sayfalarda yayımlansın.</p>' +
+      '<a class="btn btn-cay" href="' + kac(link) + '" target="_blank" rel="noopener">' + (e ? "E-posta gönder" : "Mesaj gönder") + "</a>" + (e ? '<p style="margin:6px 0 0">E-posta: <b>' + kac(e) + "</b></p>" : "") + "</div>" +
+      '<div class="foto">' + (TUM[0] ? gorselHTML(kapakGorsel(TUM[0]), "") : "") + "</div></div></div>";
     document.title = "Hakkımızda — " + SITE;
   }
 
@@ -419,6 +419,8 @@
       default: sayfaBulunamadi();
     }
     $$("[data-rota]").forEach(function (a) { a.classList.toggle("aktif", a.dataset.rota === rota); });
+    main.classList.remove("gorunum"); void main.offsetWidth; main.classList.add("gorunum");
+    cekmeceKapat();
     if (!ilk) window.scrollTo(0, 0);
     ilk = false;
   }
@@ -456,6 +458,43 @@
   $$("[data-ig-ad]").forEach(function (a) { a.textContent = "@" + IG; });
   $$("[data-yil]").forEach(function (s) { s.textContent = new Date().getFullYear(); });
   $$("[data-slogan]").forEach(function (s) { if (A.slogan) s.textContent = A.slogan + "."; });
+
+  /* ---------- Çekmece menü ---------- */
+  var cekmece = $("#cekmece"), ortu = $("#cekmece-ortu"), menuBtn = $("#menu-btn");
+  function cekmeceAc() {
+    cekmece.classList.add("acik"); cekmece.setAttribute("aria-hidden", "false");
+    ortu.hidden = false; document.body.classList.add("cekmece-acik");
+    menuBtn.setAttribute("aria-expanded", "true");
+    var ilkLink = $("a", cekmece); if (ilkLink) ilkLink.focus({ preventScroll: true });
+  }
+  function cekmeceKapat() {
+    if (!cekmece.classList.contains("acik")) return;
+    cekmece.classList.remove("acik"); cekmece.setAttribute("aria-hidden", "true");
+    ortu.hidden = true; document.body.classList.remove("cekmece-acik");
+    menuBtn.setAttribute("aria-expanded", "false");
+  }
+  menuBtn.addEventListener("click", cekmeceAc);
+  $("#cekmece-kapat").addEventListener("click", cekmeceKapat);
+  ortu.addEventListener("click", cekmeceKapat);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") cekmeceKapat(); });
+  cekmece.addEventListener("click", function (e) { if (e.target.closest("a")) cekmeceKapat(); });
+  $("#cekmece-raflar").innerHTML = DOLU_KAT.map(function (k) { return '<a href="#/raf/' + kac(k.id) + '">' + kac(k.ad) + "<small>" + katListe(k.id).length + "</small></a>"; }).join("");
+
+  /* ---------- Uygulama olarak kurma (ana ekrana ekle) ve çevrimdışı okuma ---------- */
+  var kurulumIstegi = null, yukleBtn = $("#yukle-btn");
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); kurulumIstegi = e; yukleBtn.hidden = false; });
+  var iosMu = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.navigator.standalone;
+  if (iosMu) yukleBtn.hidden = false;
+  yukleBtn.addEventListener("click", function () {
+    if (!kurulumIstegi) { if (iosMu) bildir("Safari’de alttaki Paylaş simgesine dokunup “Ana Ekrana Ekle”yi seçin."); return; }
+    kurulumIstegi.prompt();
+    kurulumIstegi.userChoice.finally(function () { kurulumIstegi = null; yukleBtn.hidden = true; });
+  });
+  if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+    window.addEventListener("load", function () {
+      try { navigator.serviceWorker.register("sw.js").catch(function () {}); } catch (e) {}
+    });
+  }
 
   window.addEventListener("hashchange", yonlendir);
   yonlendir();

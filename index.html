@@ -6,6 +6,11 @@
 <title>Geldi Geçti Hatıralar — Unutulmaya yüz tutmuş günlerin izinde</title>
 <meta name="description" content="Eski İstanbul, mahalle hayatı, bakkal defterleri, vapurlar, klasik arabalar ve tek kanallı televizyon akşamları… Geldi Geçti Hatıralar’ın fotoğrafları ve hatıra yazıları.">
 <meta name="theme-color" content="#16233a">
+<meta name="color-scheme" content="light dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Geldi Geçti">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Geldi Geçti Hatıralar">
 <meta property="og:title" content="Geldi Geçti Hatıralar">
@@ -13,6 +18,8 @@
 <meta property="og:image" content="medya/tanitim-kapak.jpg">
 <meta property="og:locale" content="tr_TR">
 <link rel="icon" href="gorseller/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="gorseller/ikon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
 <link rel="preload" href="fontlar/fraunces-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fontlar/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
@@ -25,6 +32,9 @@
 
 <header class="ust" id="ust">
   <div class="ust-ic">
+    <button class="ikon-btn menu-btn" id="menu-btn" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="cekmece">
+      <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+    </button>
     <a class="logo" href="#/" aria-label="Geldi Geçti Hatıralar — Ana sayfa">
       <img class="logo-isaret" src="gorseller/favicon.svg" alt="" width="38" height="38">
       <span class="logo-yazi"><b>GELDİ GEÇTİ</b><small>Hatıra · Fotoğraf · Hikâye</small></span>
@@ -37,17 +47,39 @@
       <a href="#/hakkimizda" data-rota="hakkimizda">Hakkımızda</a>
     </nav>
     <div class="ust-arac">
+      <a class="ikon-btn" href="#/kesfet" aria-label="Hatıralarda ara">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </a>
       <button class="ikon-btn" id="tema-btn" type="button" aria-label="Koyu / açık tema">
         <svg class="ay" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
         <svg class="gunes" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
-      <a class="ig-dugme" data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" class="dolu"/></svg>
-        <span>Instagram</span>
-      </a>
     </div>
   </div>
 </header>
+
+<div class="cekmece-ortu" id="cekmece-ortu" hidden></div>
+<aside class="cekmece" id="cekmece" aria-label="Menü" aria-hidden="true">
+  <div class="cekmece-ust">
+    <span class="logo-yazi"><b>GELDİ GEÇTİ</b><small>Hatıra · Fotoğraf · Hikâye</small></span>
+    <button class="ikon-btn" id="cekmece-kapat" type="button" aria-label="Menüyü kapat">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="cekmece-menu" aria-label="Sayfalar">
+    <a href="#/" data-rota="ana"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Bugün</a>
+    <a href="#/album" data-rota="album"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>Bu Ayın Albümü</a>
+    <a href="#/kesfet" data-rota="kesfet"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Keşfet</a>
+    <a href="#/arsiv" data-rota="arsiv"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10h14V9M10 13h4"/></svg>Arşiv</a>
+    <a href="#/hakkimizda" data-rota="hakkimizda"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Hakkımızda</a>
+  </nav>
+  <div class="cekmece-baslik">Raflar</div>
+  <nav class="cekmece-raflar" id="cekmece-raflar" aria-label="Raflar"></nav>
+  <div class="cekmece-alt">
+    <button class="btn btn-cizgi" id="yukle-btn" type="button" hidden>Ana ekrana ekle</button>
+    <a class="btn btn-cay" href="#/hakkimizda">Hatıranı gönder</a>
+  </div>
+</aside>
 
 <main id="icerik" tabindex="-1">
   <noscript><p class="noscript">Hatıraları görebilmek için tarayıcınızda JavaScript’i etkinleştirin.</p></noscript>
@@ -63,20 +95,11 @@
       <p data-slogan>Unutulmaya yüz tutmuş günlerin izinde.</p>
     </div>
     <nav class="alt-linkler" aria-label="Alt menü">
-      <a href="#/">Bugün</a><a href="#/album">Bu Ayın Albümü</a><a href="#/kesfet">Keşfet</a><a href="#/arsiv">Arşiv</a><a href="#/hakkimizda">Hakkımızda</a>
-      <a data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#/">Bugün</a><a href="#/album">Bu Ayın Albümü</a><a href="#/kesfet">Keşfet</a><a href="#/arsiv">Arşiv</a><a href="#/hakkimizda">Hakkımızda</a><a href="#/kaynaklar">Fotoğraf kaynakları</a>
     </nav>
-    <p class="alt-not">© <span data-yil>2026</span> Geldi Geçti Hatıralar. Yazılar ve fotoğraflar <a data-ig-profil data-ig-ad href="https://www.instagram.com/" target="_blank" rel="noopener">@geldigecti_hatiralar</a> hesabından alınmıştır. <a href="#/kaynaklar">Fotoğraf kaynakları</a></p>
+    <p class="alt-not">© <span data-yil>2026</span> Geldi Geçti Hatıralar. Tüm yazıların hakları saklıdır. <span class="sosyal">Bizi sosyal medyada da bulabilirsiniz: <a data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></span></p>
   </div>
 </footer>
-
-<nav class="alt-sekme" aria-label="Hızlı menü">
-  <a href="#/" data-rota="ana"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg>Bugün</a>
-  <a href="#/album" data-rota="album"><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>Albüm</a>
-  <a href="#/kesfet" data-rota="kesfet"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>Keşfet</a>
-  <a href="#/arsiv" data-rota="arsiv"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="1"/><path d="M5 9v10h14V9M10 13h4"/></svg>Arşiv</a>
-  <a data-ig-profil href="https://www.instagram.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".9" class="dolu"/></svg>Instagram</a>
-</nav>
 
 <div class="bildirim" id="bildirim" role="status" aria-live="polite"></div>
 
